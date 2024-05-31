@@ -69,6 +69,26 @@
             $this->cast[] = $actor;
         }
 
+        public function get_cast() {
+            return $this->cast;
+        }
+        // -----------------------------------------
+
+        // -------------- country -----------------
+        public function set_country(string $country_production) {
+            if(!empty(trim($country_production))) {
+                $this->country_production = ucfirst(trim($country_production));
+            } else {
+                throw new Exception("Il campo paese di produzione non può essere vuoto");
+            }
+        }
+
+        public function get_country() {
+            return $this->country_production;
+        } 
+
+
+
     }
 ?>
 
