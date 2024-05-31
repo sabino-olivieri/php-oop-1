@@ -1,6 +1,5 @@
 <?php
 
-use function PHPSTORM_META\exitPoint;
 
     class Movie {
         public string $title;
@@ -14,8 +13,8 @@ use function PHPSTORM_META\exitPoint;
 
         public function __construct(string $title, string $year_release)
         {
-            $this->title = $title;
-            $this->year_release = $year_release;
+            $this->title = ucfirst(trim($title));
+            $this->year_release = trim($year_release);
         }
 
         // -------------- duration -------------------
@@ -39,6 +38,11 @@ use function PHPSTORM_META\exitPoint;
             return (int) $hours . "h, " . $minutes . "min";
         }
         //-----------------------------------
+
+        // ------------ genre --------------
+        public function set_genre(Genre $genre) {
+            $this->genre = $genre;
+        }
 
 
     }
