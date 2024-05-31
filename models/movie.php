@@ -19,7 +19,7 @@
 
         // -------------- duration -------------------
 
-        public function set_Duration(int $duration) {
+        public function set_duration(int $duration) {
             if($duration > 0) {
                 $this->duration = $duration;
             } else {
@@ -85,6 +85,21 @@
 
         public function get_country() {
             return $this->country_production;
+        } 
+
+        // ----------------------------------------
+
+        //--------------- language ---------------
+        public function set_language(string $language) {
+            if(!empty(trim($language))) {
+                $this->language = ucfirst(trim($language));
+            } else {
+                throw new Exception("Il campo paese di produzione non può essere vuoto");
+            }
+        }
+
+        public function get_language() {
+            return $this->language;
         } 
 
 
