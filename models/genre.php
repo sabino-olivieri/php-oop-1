@@ -3,7 +3,7 @@
         private string $name;
 
         public function set_genre_name(string $name) {
-            if(!empty($name)) {
+            if(!empty(trim($name))) {
                 $this->name = ucfirst(trim($name));
             } else {
                 throw new Exception("Il genere non può essere vuoto");

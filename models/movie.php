@@ -44,6 +44,24 @@
             $this->genre = $genre;
         }
 
+        public function get_genre() {
+            return $this->genre;
+        }
+        // ------------------------------------
+
+        //------------ director ---------------
+        public function set_director(string $director) {
+            if(!empty(trim($director))) {
+                $this->director = ucfirst(trim($director));
+            } else {
+                throw new Exception("Il nome del regista non può essere vuoto");
+            }
+        }
+
+        public function get_director() {
+            return $this->director;
+        }
+        //-------------------------------------
 
     }
 ?>
