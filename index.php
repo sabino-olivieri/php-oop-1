@@ -54,8 +54,62 @@
     $movie_will_hunting->set_country("Stati Uniti");
     $movie_will_hunting->set_language("English");
 
-    var_dump($movie_avengers);
-    echo "<hr>";
-    var_dump($movie_will_hunting);
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h3><?php echo $movie_avengers->title; ?></h3>
+            <h5><?php echo $movie_avengers->year_release; ?></h5>
+            <ul>
+                <li><strong>Durata: </strong><?php echo $movie_avengers->get_duration(); ?></li>
+                <li><strong>Genere: </strong><?php echo $movie_avengers->get_genre()->get_genre_name(); ?></li>
+                <li><strong>Regista: </strong><?php echo $movie_avengers->get_director(); ?></li>
+                <li><strong>Paese di produzione: </strong><?php echo $movie_avengers->get_country(); ?></li>
+                <li><strong>Lingua originale: </strong><?php echo $movie_avengers->get_language(); ?></li>
+                <li><strong>Cast:</strong>
+                    <ul>
+                    <?php foreach ($movie_avengers->get_cast() as $key => $cur_obj) { ?>
+                        <li><?php echo "<em>" . $cur_obj->get_actor_name() . " </em>- " . $cur_obj->get_actor_role(); ?></li>
+                        <?php } ?>
+                    </ul>
+                </li>
+
+
+            </ul>
+
+        </div>
+        
+        <div class="card">
+            <h3><?php echo $movie_will_hunting->title; ?></h3>
+            <h5><?php echo $movie_will_hunting->year_release; ?></h5>
+            <ul>
+                <li><strong>Durata: </strong><?php echo $movie_will_hunting->get_duration(); ?></li>
+                <li><strong>Genere: </strong><?php echo $movie_will_hunting->get_genre()->get_genre_name(); ?></li>
+                <li><strong>Regista: </strong><?php echo $movie_will_hunting->get_director(); ?></li>
+                <li><strong>Paese di produzione: </strong><?php echo $movie_will_hunting->get_country(); ?></li>
+                <li><strong>Lingua originale: </strong><?php echo $movie_will_hunting->get_language(); ?></li>
+                <li><strong>Cast:</strong>
+                    <ul>
+                    <?php foreach ($movie_will_hunting->get_cast() as $key => $cur_obj) { ?>
+                        <li><?php echo "<em>" . $cur_obj->get_actor_name() . " </em>- " . $cur_obj->get_actor_role(); ?></li>
+                        <?php } ?>
+                    </ul>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>
